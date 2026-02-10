@@ -191,7 +191,7 @@ Licensed under the MIT License. See LICENSE for details.
 ## Contact
 
 - GitHub: [ghsalah](https://github.com/ghsalah)
-- Email: <your-email@example.com>
+- Email: <salah121sias@gmail..com>
 
 
 ---
