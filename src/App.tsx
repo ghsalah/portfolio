@@ -1,21 +1,14 @@
-// App.tsx
-import { useState } from "react";
+import { useState, lazy, Suspense } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import About from "./components/About";
-import Skills from "./components/Skills";
-import Projects from "./components/Projects";
-import Contact from "./components/Contact";
 import CustomCursor from "./components/CustomCursor";
 
-const sections = [
-  { id: "hero", component: <Hero /> },
-  { id: "about", component: <About /> },
-  { id: "skills", component: <Skills /> },
-  { id: "projects", component: <Projects /> },
-  { id: "contact", component: <Contact /> },
-];
+// Lazy load heavy sections
+const Experience = lazy(() => import("./components/Experience"));
+const Projects = lazy(() => import("./components/Projects"));
+const Contact = lazy(() => import("./components/Contact"));
 
 function App() {
   const [currentSectionIndex, setCurrentSectionIndex] = useState(0);
@@ -25,6 +18,35 @@ function App() {
     setCurrentSectionIndex(index);
     setIsMenuOpen(false);
   };
+
+  const sections = [
+    { id: "hero", component: <Hero goToSection={goToSection} /> },
+    { id: "about", component: <About /> },
+    {
+      id: "experience",
+      component: (
+        <Suspense fallback={<div className="min-h-screen bg-black" />}>
+          <Experience />
+        </Suspense>
+      ),
+    },
+    {
+      id: "projects",
+      component: (
+        <Suspense fallback={<div className="min-h-screen bg-black" />}>
+          <Projects />
+        </Suspense>
+      ),
+    },
+    {
+      id: "contact",
+      component: (
+        <Suspense fallback={<div className="min-h-screen bg-black" />}>
+          <Contact />
+        </Suspense>
+      ),
+    },
+  ];
 
   return (
     <div className="relative min-h-screen bg-black text-white">
@@ -59,11 +81,10 @@ function App() {
           <button
             key={index}
             onClick={() => goToSection(index)}
-            className={`w-1.5 h-8 sm:w-2 sm:h-10 rounded-full transition-all duration-300 ${
-              index === currentSectionIndex
-                ? "bg-yellow-400 scale-125 shadow-lg shadow-yellow-400/50"
-                : "bg-white/30 hover:bg-white/60"
-            }`}
+            className={`w-1.5 h-8 sm:w-2 sm:h-10 rounded-full transition-all duration-300 ${index === currentSectionIndex
+              ? "bg-yellow-400 scale-125 shadow-lg shadow-yellow-400/50"
+              : "bg-white/30 hover:bg-white/60"
+              }`}
             aria-label={`Go to section ${index + 1}`}
           />
         ))}

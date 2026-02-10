@@ -1,1 +1,103 @@
 @import "tailwindcss";
+
+html {
+  scrollbar-gutter: stable;
+}
+
+body {
+  overflow-x: hidden;
+  background-color: black;
+}
+
+/* Custom Scrollbar */
+.scrollbar-custom::-webkit-scrollbar {
+  height: 6px;
+  width: 6px;
+}
+
+.scrollbar-custom::-webkit-scrollbar-track {
+  background: rgba(24, 24, 27, 0.5);
+  border-radius: 10px;
+}
+
+.scrollbar-custom::-webkit-scrollbar-thumb {
+  background: rgba(250, 204, 21, 0.2);
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+/* Glassmorphism Premium */
+.glass-premium {
+  background: rgba(18, 18, 20, 0.3);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+
+/* Fading Masks */
+.mask-horizontal {
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+/* Glitch Animations */
+@keyframes glitch-1 {
+  0% {
+    transform: translate(0)
+  }
+
+  20% {
+    transform: translate(-2px, 2px)
+  }
+
+  40% {
+    transform: translate(-2px, -2px)
+  }
+
+  60% {
+    transform: translate(2px, 2px)
+  }
+
+  80% {
+    transform: translate(2px, -2px)
+  }
+
+  100% {
+    transform: translate(0)
+  }
+}
+
+@keyframes glitch-2 {
+  0% {
+    transform: translate(0)
+  }
+
+  20% {
+    transform: translate(2px, -2px)
+  }
+
+  40% {
+    transform: translate(2px, 2px)
+  }
+
+  60% {
+    transform: translate(-2px, -2px)
+  }
+
+  80% {
+    transform: translate(-2px, 2px)
+  }
+
+  100% {
+    transform: translate(0)
+  }
+}
+
+.animate-glitch-1 {
+  animation: glitch-1 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both infinite;
+}
+
+.animate-glitch-2 {
+  animation: glitch-2 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) reverse both infinite;
+}

@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import { motion } from 'framer-motion';
 import TechBadge from './ui/TechBadge';
 
@@ -19,13 +20,13 @@ interface ProjectCardProps {
   currentIndex: number;
 }
 
-export default function ProjectCard({
+const ProjectCard = memo(({
   project,
   isActive,
   onClick,
   index,
   currentIndex,
-}: ProjectCardProps) {
+}: ProjectCardProps) => {
   const getTransform = () => {
     if (index === currentIndex) return 'translateX(0) scale(1)';
     if (index > currentIndex) return 'translateX(200px) scale(0.75)';
@@ -34,9 +35,8 @@ export default function ProjectCard({
 
   return (
     <motion.div
-      className={`absolute transition-all duration-300 ease-in-out cursor-pointer ${
-        isActive ? 'z-30 opacity-100' : 'z-10 opacity-40'
-      }`}
+      className={`absolute transition-all duration-300 ease-in-out cursor-pointer ${isActive ? 'z-30 opacity-100' : 'z-10 opacity-40'
+        }`}
       style={{ transform: getTransform() }}
       onClick={onClick}
       whileHover={isActive ? { scale: 1.05 } : {}}
@@ -65,5 +65,7 @@ export default function ProjectCard({
       </div>
     </motion.div>
   );
-}
+});
+
+export default ProjectCard;
 

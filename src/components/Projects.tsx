@@ -1,7 +1,6 @@
 import { useState } from 'react';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { ChevronLeft, ChevronRight, ExternalLink, Github } from 'lucide-react';
 import SectionTitle from './ui/SectionTitle';
-import Button from './ui/Button';
 import TechBadge from './ui/TechBadge';
 import ProjectCard from './ProjectCard';
 import { fadeInUp, fadeInDown } from '../utils/animations';
@@ -26,7 +25,7 @@ const projects: Project[] = [
     tech: ["Next.js", "TypeScript", "Prisma", "Stripe", "Tailwind"],
     liveUrl: "https://example.com",
     githubUrl: "https://github.com",
-    color: "from-purple-500 to-pink-500",
+    color: "from-yellow-400/20 to-yellow-600/20",
   },
   {
     id: 2,
@@ -36,7 +35,7 @@ const projects: Project[] = [
     tech: ["React", "Socket.io", "Node.js", "MongoDB", "Zustand"],
     liveUrl: "https://taskflow.example",
     githubUrl: "https://github.com",
-    color: "from-blue-500 to-cyan-500",
+    color: "from-yellow-400/20 to-orange-500/20",
   },
   {
     id: 3,
@@ -46,7 +45,7 @@ const projects: Project[] = [
     tech: ["Next.js", "OpenAI", "Vercel", "Tailwind", "Shadcn"],
     liveUrl: "https://aiwriter.example",
     githubUrl: "https://github.com",
-    color: "from-emerald-500 to-teal-500",
+    color: "from-yellow-400/20 to-amber-500/20",
   },
 ];
 
@@ -61,13 +60,13 @@ export default function Projects() {
   const selectedProject = projects[currentIndex];
 
   return (
-    <section className="min-h-screen lg:h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white py-8 md:py-12 lg:py-16 px-4 sm:px-6 md:px-8 flex items-center">
+    <section className="min-h-screen lg:h-screen bg-gradient-to-br from-black via-zinc-900 to-black text-white pt-20 md:pt-24 lg:pt-20 pb-8 px-4 sm:px-6 md:px-8 flex items-center justify-center">
       <div className="max-w-7xl mx-auto w-full">
-        <SectionTitle 
-          title="My Projects" 
+        <SectionTitle
+          title="My Projects"
           highlight="Projects"
           subtitle="Check out some of my recent work"
-          className="mb-6 lg:mb-8"
+          className="mb-8 lg:mb-10 text-center"
         />
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 lg:gap-10">
@@ -91,17 +90,17 @@ export default function Projects() {
               {/* Controls */}
               <button
                 onClick={prevProject}
-                className="absolute left-0 sm:left-4 z-40 p-2 sm:p-3 bg-white/10 rounded-full hover:bg-white/20 hover:scale-110 transition"
+                className="absolute left-0 sm:left-4 z-40 p-2 sm:p-3 bg-zinc-800/80 hover:bg-yellow-400/20 border border-zinc-700/50 hover:border-yellow-400/50 rounded-full hover:scale-110 transition"
                 aria-label="Previous project"
               >
-                <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" />
+                <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6 text-yellow-400" />
               </button>
               <button
                 onClick={nextProject}
-                className="absolute right-0 sm:right-4 z-40 p-2 sm:p-3 bg-white/10 rounded-full hover:bg-white/20 hover:scale-110 transition"
+                className="absolute right-0 sm:right-4 z-40 p-2 sm:p-3 bg-zinc-800/80 hover:bg-yellow-400/20 border border-zinc-700/50 hover:border-yellow-400/50 rounded-full hover:scale-110 transition"
                 aria-label="Next project"
               >
-                <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6" />
+                <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6 text-yellow-400" />
               </button>
             </div>
 
@@ -111,11 +110,10 @@ export default function Projects() {
                 <button
                   key={idx}
                   onClick={() => setCurrentIndex(idx)}
-                  className={`h-2 rounded-full transition-all ${
-                    idx === currentIndex
-                      ? 'w-8 bg-gradient-to-r from-blue-500 to-purple-500'
-                      : 'w-2 bg-gray-600'
-                  }`}
+                  className={`h-2 rounded-full transition-all ${idx === currentIndex
+                      ? 'w-8 bg-yellow-400'
+                      : 'w-2 bg-zinc-700 hover:bg-zinc-600'
+                    }`}
                   aria-label={`Go to project ${idx + 1}`}
                 />
               ))}
@@ -125,9 +123,9 @@ export default function Projects() {
           {/* RIGHT COLUMN — Project Details */}
           <AnimationWrapper variants={fadeInDown} className="flex flex-col justify-center items-start px-2 sm:px-4 md:px-6 lg:px-4">
             <div
-              className={`w-full h-40 sm:h-48 md:h-56 lg:h-44 xl:h-52 rounded-2xl overflow-hidden mb-4 md:mb-6 lg:mb-6 bg-gradient-to-br ${selectedProject.color} relative shadow-2xl`}
+              className={`w-full h-40 sm:h-48 md:h-56 lg:h-44 xl:h-52 rounded-2xl overflow-hidden mb-4 md:mb-6 lg:mb-6 bg-gradient-to-br ${selectedProject.color} border border-yellow-400/20 relative shadow-2xl`}
             >
-              <div className="absolute inset-0 bg-black/20" />
+              <div className="absolute inset-0 bg-black/40" />
               <h3 className="absolute bottom-4 md:bottom-6 lg:bottom-5 left-4 md:left-6 lg:left-5 text-lg sm:text-xl md:text-2xl lg:text-xl xl:text-2xl font-bold text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
                 {selectedProject.title}
               </h3>
@@ -143,26 +141,28 @@ export default function Projects() {
               ))}
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 w-full sm:w-auto">
+            <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
               {selectedProject.liveUrl && (
-                <Button
+                <a
                   href={selectedProject.liveUrl}
-                  variant="primary"
-                  size="md"
-                  className="w-full sm:w-auto"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-2 px-6 py-3 bg-yellow-400 hover:bg-yellow-300 text-black font-bold rounded-lg transition-colors w-full sm:w-auto"
                 >
+                  <ExternalLink size={18} />
                   View Live Demo
-                </Button>
+                </a>
               )}
               {selectedProject.githubUrl && (
-                <Button
+                <a
                   href={selectedProject.githubUrl}
-                  variant="outline"
-                  size="md"
-                  className="w-full sm:w-auto"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-2 px-6 py-3 bg-zinc-800/50 hover:bg-zinc-700/50 border border-zinc-700/50 hover:border-yellow-400/50 text-white font-semibold rounded-lg transition-colors w-full sm:w-auto"
                 >
+                  <Github size={18} />
                   Source Code
-                </Button>
+                </a>
               )}
             </div>
           </AnimationWrapper>

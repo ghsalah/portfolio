@@ -28,15 +28,15 @@ export default function SectionTitle({
           const normalizedWord = word.toLowerCase().replace(/[^\w]/g, '');
           const normalizedHighlight = highlight?.toLowerCase().replace(/[^\w]/g, '') || '';
           const shouldHighlight = highlight && normalizedWord.includes(normalizedHighlight);
-          
+
           return (
             <span key={i}>
               {shouldHighlight ? (
-                <span className="bg-gradient-to-r from-yellow-400 via-yellow-300 to-pink-500 bg-clip-text text-transparent drop-shadow-[0_0_8px_rgba(250,204,21,0.4)]">
+                <span className="bg-gradient-to-r from-yellow-400 via-yellow-300 to-yellow-500 bg-clip-text text-transparent drop-shadow-[0_0_8px_rgba(250,204,21,0.4)]">
                   {word}{' '}
                 </span>
               ) : (
-                <span className="bg-gradient-to-r from-blue-400 via-purple-500 to-purple-600 bg-clip-text text-transparent drop-shadow-[0_0_8px_rgba(139,92,246,0.3)]">
+                <span className="text-white">
                   {word}{' '}
                 </span>
               )}
