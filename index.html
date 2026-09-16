@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aboobacker Salah | Software Engineer & AI Systems Developer</title>
+  <meta name="description"
+    content="Portfolio of Aboobacker Salah - Software Engineer & AI Systems Developer specializing in full-stack web applications, reactive user interfaces, and scalable backend architecture.">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <!-- FontAwesome / Feather Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- Canvas Background for Ambient Header Wave Animation -->
+  <canvas id="hero-canvas"></canvas>
+
+  <!-- Ambient Glow Elements -->
+  <div class="glow-orb orb-top"></div>
+  <div class="glow-orb orb-mid"></div>
+
+  <!-- Header / Navigation Bar -->
+  <header class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="#" class="brand-logo">
+        <img src="src/assets/logo.png" alt="Salah Logo" class="logo-img" onerror="this.style.display='none'">
+        <span class="logo-text">SALAH<span class="dot">.</span></span>
+      </a>
+
+      <nav class="nav-links" id="nav-links">
+        <a href="#about" class="nav-link">About</a>
+        <a href="#capabilities" class="nav-link">Capabilities</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#stack" class="nav-link">Tech Stack</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle Light/Dark Theme"
+          title="Toggle Day/Night Mode">
+          <span class="icon-wrap">
+            <i class="fa-solid fa-sun icon-sun"></i>
+            <i class="fa-solid fa-moon icon-moon"></i>
+          </span>
+        </button>
+        <a href="src/assets/Aboobacker_salah_c_Resume.pdf" target="_blank" class="btn btn-pill-outline">
+          <i class="fa-solid fa-file-arrow-down"></i> Resume
+        </a>
+        <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle Navigation">
+          <div class="hamburger-box">
+            <span class="line line-top"></span>
+            <span class="line line-middle"></span>
+            <span class="line line-bottom"></span>
+          </div>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section class="hero-section" id="hero">
+      <div class="container hero-container">
+
+        <!-- Pill Badge -->
+        <div class="pill-tag fade-in">
+          <span class="pill-sparkle">✦</span>
+          <span>PORTFOLIO 2026 • SOFTWARE ENGINEER</span>
+        </div>
+
+        <!-- Hero Headline -->
+        <h1 class="hero-title fade-in">
+          Full-Stack Systems<br>
+          <span class="gradient-text">Engineered For Impact.</span>
+        </h1>
+
+        <!-- Subheadline -->
+        <p class="hero-subtitle fade-in">
+          Architecting high-performance web applications, intelligent AI workflows, and scalable cloud solutions with
+          high design fidelity.
+        </p>
+
+        <!-- CTA Action Buttons -->
+        <div class="hero-ctas fade-in">
+          <a href="#projects" class="btn btn-primary btn-glow">
+            <span>Explore Projects</span>
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+          <a href="src/assets/Aboobacker_salah_c_Resume.pdf" target="_blank" class="btn btn-secondary">
+            <i class="fa-solid fa-download"></i> View Resume
+          </a>
+        </div>
+
+        <!-- 3D Glass Badge Center Icon -->
+        <div class="hero-center-badge fade-in">
+          <div class="badge-glow"></div>
+          <div class="badge-card">
+            <div class="badge-icon-wrap">
+              <i class="fa-solid fa-cube"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tech Marquee / Partner Brands -->
+        <div class="marquee-wrapper fade-in">
+          <p class="marquee-title">TECHNOLOGY & FRAMEWORKS</p>
+          <div class="marquee-track">
+            <div class="marquee-content">
+              <span class="tech-item"><i class="fa-brands fa-react"></i> React</span>
+              <span class="tech-item"><i class="fa-brands fa-node-js"></i> Node.js</span>
+              <span class="tech-item"><i class="fa-brands fa-python"></i> Python</span>
+              <span class="tech-item"><i class="fa-brands fa-js"></i> TypeScript</span>
+              <span class="tech-item"><i class="fa-brands fa-docker"></i> Docker</span>
+              <span class="tech-item"><i class="fa-solid fa-gears"></i> DevOps</span>
+              <span class="tech-item"><i class="fa-brands fa-aws"></i> AWS</span>
+              <span class="tech-item"><i class="fa-solid fa-database"></i> PostgreSQL</span>
+              <span class="tech-item"><i class="fa-brands fa-figma"></i> UI/UX Design</span>
+            </div>
+            <!-- Duplicate for seamless looping -->
+            <div class="marquee-content" aria-hidden="true">
+              <span class="tech-item"><i class="fa-brands fa-react"></i> React</span>
+              <span class="tech-item"><i class="fa-brands fa-node-js"></i> Node.js</span>
+              <span class="tech-item"><i class="fa-brands fa-python"></i> Python</span>
+              <span class="tech-item"><i class="fa-brands fa-js"></i> TypeScript</span>
+              <span class="tech-item"><i class="fa-brands fa-docker"></i> Docker</span>
+              <span class="tech-item"><i class="fa-solid fa-gears"></i> DevOps</span>
+              <span class="tech-item"><i class="fa-brands fa-aws"></i> AWS</span>
+              <span class="tech-item"><i class="fa-solid fa-database"></i> PostgreSQL</span>
+              <span class="tech-item"><i class="fa-brands fa-figma"></i> UI/UX Design</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 1: ABOUT ME -->
+    <section class="section about-section" id="about">
+      <div class="container">
+
+        <div class="glass-card about-card-wrapper">
+          <div class="about-grid">
+            <div class="about-image-col">
+              <div class="about-img-frame">
+                <img src="src/assets/aboobacker_salah_img.jpg" alt="Aboobacker Salah" class="about-profile-img"
+                  onerror="this.src='https://via.placeholder.com/300?text=Salah'">
+                <div class="img-glow-backdrop"></div>
+              </div>
+            </div>
+
+            <div class="about-content-col">
+              <div class="pill-tag">
+                <span class="pill-sparkle">✦</span>
+                <span>ABOUT ME</span>
+              </div>
+              <h2 class="about-heading">Architecting Intelligent Web Systems & High-Fidelity Interfaces</h2>
+              <p class="about-lead">
+                Hi, I'm <strong class="text-white">Aboobacker Salah</strong> — a Software Engineer & AI Systems
+                Developer passionate about turning complex requirements into elegant, high-performance software.
+              </p>
+              <p class="about-text">
+                With experience spanning modern reactive frontends, robust REST & GraphQL backends, and intelligent
+                automation workflows, I engineer scalable applications designed to deliver real-world impact.
+              </p>
+
+              <div class="about-stats-grid">
+                <div class="stat-box">
+                  <span class="stat-num">100%</span>
+                  <span class="stat-label">Code Quality & Precision</span>
+                </div>
+                <div class="stat-box">
+                  <span class="stat-num">Full-Stack</span>
+                  <span class="stat-label">End-to-End Delivery</span>
+                </div>
+                <div class="stat-box">
+                  <span class="stat-num">AI Native</span>
+                  <span class="stat-label">Modern Automation</span>
+                </div>
+              </div>
+
+              <div class="about-actions">
+                <a href="#contact" class="btn btn-primary btn-glow">Get In Touch</a>
+                <a href="src/assets/Aboobacker_salah_c_Resume.pdf" target="_blank" class="btn btn-secondary"><i
+                    class="fa-solid fa-file-pdf"></i> Resume PDF</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 2: CAPABILITIES (Styled like "What is Onion AI?") -->
+    <section class="section capabilities-section" id="capabilities">
+      <div class="container">
+
+        <div class="section-header text-center">
+          <div class="pill-tag">
+            <span class="pill-sparkle">✦</span>
+            <span>CORE CAPABILITIES</span>
+          </div>
+          <h2 class="section-title">What is my Focus?</h2>
+          <p class="section-subtitle">
+            A software engineer dedicated to building seamless end-to-end digital solutions — bridging clean design
+            systems with robust backend logic.
+          </p>
+        </div>
+
+        <!-- 3-Column Glass Cards Grid -->
+        <div class="cards-grid-3">
+
+          <div class="glass-card feature-card">
+            <div class="card-icon-box">
+              <i class="fa-solid fa-microchip"></i>
+            </div>
+            <h3 class="card-title">Full-Stack Web Engineering</h3>
+            <p class="card-desc">
+              Designing scalable frontend micro-frontends and reactive UIs linked with high-throughput REST and GraphQL
+              backend services.
+            </p>
+          </div>
+
+          <div class="glass-card feature-card">
+            <div class="card-icon-box">
+              <i class="fa-solid fa-sliders"></i>
+            </div>
+            <h3 class="card-title">Real-Time AI & Automation</h3>
+            <p class="card-desc">
+              Embedding intelligent model runtimes, agentic task logic, voice-driven interfaces, and data automation
+              workflows.
+            </p>
+          </div>
+
+          <div class="glass-card feature-card">
+            <div class="card-icon-box">
+              <i class="fa-solid fa-cubes"></i>
+            </div>
+            <h3 class="card-title">Architecture & System Reliability</h3>
+            <p class="card-desc">
+              Building modular, type-safe software foundations, Docker containerization, CI/CD pipelines, and
+              high-performance databases.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 2: FEATURED PROJECTS -->
+    <section class="section projects-section" id="projects">
+      <div class="container">
+
+        <div class="section-header text-center">
+          <div class="pill-tag">
+            <span class="pill-sparkle">✦</span>
+            <span>PORTFOLIO SHOWCASE</span>
+          </div>
+          <h2 class="section-title">Featured Projects</h2>
+          <p class="section-subtitle">
+            Filter and search across scalable web platforms, dashboard portals, and intelligent tools.
+          </p>
+        </div>
+
+        <!-- Filter & Search Control Bar -->
+        <div class="projects-control-bar">
+          <div class="filter-pills-row" id="project-filters">
+            <button class="filter-btn active" data-filter="all">All Projects <span
+                class="filter-badge">7</span></button>
+            <button class="filter-btn" data-filter="fullstack">Full-Stack</button>
+            <button class="filter-btn" data-filter="dashboard">Dashboards & Admin</button>
+            <button class="filter-btn" data-filter="ai">AI & Automation</button>
+            <button class="filter-btn" data-filter="tool">Interactive Tools</button>
+          </div>
+
+          <div class="project-search-box">
+            <i class="fa-solid fa-magnifying-glass search-icon"></i>
+            <input type="text" id="project-search-input" placeholder="Search projects by title or tech tag...">
+          </div>
+        </div>
+
+        <!-- Project Cards Scrollable Container -->
+        <div class="projects-scroll-container">
+          <div class="projects-grid-4" id="projects-grid">
+
+            <!-- Project 1: CartyFly -->
+            <div class="glass-card project-card" data-category="fullstack">
+              <div class="project-card-header">
+                <span class="step-num">01</span>
+                <h3 class="project-title">CartyFly</h3>
+                <p class="project-tagline">Next-Generation E-Commerce Ecosystem</p>
+              </div>
+              <div class="project-img-wrapper">
+                <img src="src/assets/projects/Carty_fly.jpg" alt="CartyFly Project Screenshot" class="project-img"
+                  loading="lazy">
+                <div class="project-overlay">
+                  <a href="https://carty-fly.vercel.app/" target="_blank" class="btn btn-sm btn-primary">Live Demo <i
+                      class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+              </div>
+              <div class="project-meta">
+                <div class="tech-tags">
+                  <span class="tag">React</span>
+                  <span class="tag">Node.js</span>
+                  <span class="tag">Tailwind</span>
+                </div>
+              </div>
+            </div>
+
+
+
+
+            <!-- Project 2: AdminHub Portal -->
+            <div class="glass-card project-card" data-category="dashboard fullstack">
+              <div class="project-card-header">
+                <span class="step-num">02</span>
+                <h3 class="project-title">AdminHub</h3>
+                <p class="project-tagline">Inventory & Compliance Admin Portal</p>
+              </div>
+              <div class="project-img-wrapper">
+                <img src="src/assets/projects/Admin_Portal.jpg" alt="AdminHub Project Screenshot" class="project-img"
+                  loading="lazy">
+                <div class="project-overlay">
+                  <a href="https://admin-gules-psi-69.vercel.app/login" target="_blank"
+                    class="btn btn-sm btn-primary">Live Demo <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+              </div>
+              <div class="project-meta">
+                <div class="tech-tags">
+                  <span class="tag">React</span>
+                  <span class="tag">Python Django</span>
+                  <span class="tag">Vercel</span>
+                  <span class="tag">Dashboard UI</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Project 3: TalentTrove -->
+            <div class="glass-card project-card" data-category="ai fullstack">
+              <div class="project-card-header">
+                <span class="step-num">03</span>
+                <h3 class="project-title">TalentTrove</h3>
+                <p class="project-tagline">Smart Hiring & Candidate Hub</p>
+              </div>
+              <div class="project-img-wrapper">
+                <img src="src/assets/projects/Talent_trove.jpg" alt="TalentTrove Project Screenshot" class="project-img"
+                  loading="lazy">
+                <div class="project-overlay">
+                  <a href="#contact" class="btn btn-sm btn-primary">Details <i
+                      class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+              </div>
+              <div class="project-meta">
+                <div class="tech-tags">
+                  <span class="tag">Python</span>
+                  <span class="tag">FastAPI</span>
+                  <span class="tag">AI Engine</span>
+                </div>
+              </div>
+            </div>
+            <!-- Project 4: ArtLayer -->
+            <div class="glass-card project-card" data-category="fullstack">
+              <div class="project-card-header">
+                <span class="step-num">04</span>
+                <h3 class="project-title">ArtLayer</h3>
+                <p class="project-tagline">Custom Art & Frame E-Commerce</p>
+              </div>
+              <div class="project-img-wrapper">
+                <img src="src/assets/projects/Art_Layer.jpg" alt="ArtLayer Project Screenshot" class="project-img"
+                  loading="lazy">
+                <div class="project-overlay">
+                  <a href="https://art-layer.vercel.app/" target="_blank" class="btn btn-sm btn-primary">Live Demo <i
+                      class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+              </div>
+              <div class="project-meta">
+                <div class="tech-tags">
+                  <span class="tag">React</span>
+                  <span class="tag">Vercel</span>
+                  <span class="tag">E-Commerce</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Project 5: TerraCraft -->
+            <div class="glass-card project-card" data-category="fullstack dashboard tool">
+              <div class="project-card-header">
+                <span class="step-num">05</span>
+                <h3 class="project-title">TerraCraft</h3>
+                <p class="project-tagline">Landscape Architecture & Management Platform</p>
+              </div>
+              <div class="project-img-wrapper">
+                <img src="src/assets/projects/Terra_Craft.jpg" alt="TerraCraft Landscape Architecture Platform" class="project-img"
+                  loading="lazy">
+                <div class="project-overlay">
+                  <a href="https://terracraft-web.vercel.app/" target="_blank" class="btn btn-sm btn-primary">Live Demo <i
+                      class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+              </div>
+              <div class="project-meta">
+                <div class="tech-tags">
+                  <span class="tag">React</span>
+                  <span class="tag">Vite</span>
+                  <span class="tag">Tailwind CSS</span>
+                  <span class="tag">Vercel</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Project 6: Interactive Playground Mode -->
+            <div class="glass-card project-card playground-card" data-category="tool ai">
+              <div class="project-card-header">
+                <span class="step-num">06</span>
+                <h3 class="project-title">Playground Mode</h3>
+                <p class="project-tagline">Interactive Code & API Inspector</p>
+              </div>
+              <div class="code-editor-mock">
+                <div class="editor-header">
+                  <div class="window-dots">
+                    <span class="dot red"></span>
+                    <span class="dot yellow"></span>
+                    <span class="dot green"></span>
+                  </div>
+                  <span class="editor-filename">api_runtime.json</span>
+                </div>
+                <pre class="code-content"><code>{
+  <span class="key">"developer"</span>: <span class="string">"Aboobacker Salah"</span>,
+  <span class="key">"status"</span>: <span class="string">"Available for Projects"</span>,
+  <span class="key">"skills"</span>: [
+    <span class="string">"React"</span>, <span class="string">"Node.js"</span>,
+    <span class="string">"Python"</span>, <span class="string">"TypeScript"</span>
+  ],
+  <span class="key">"performance"</span>: <span class="number">99.9</span>
+}</code></pre>
+              </div>
+              <div class="interactive-input-box">
+                <input type="text" value="salah --deploy --env production" readonly id="terminal-input">
+                <button class="input-btn" title="Run Execution" id="run-cmd-btn"><i
+                    class="fa-solid fa-arrow-up"></i></button>
+              </div>
+            </div>
+
+            <!-- Project 7: MediCore -->
+            <div class="glass-card project-card" data-category="fullstack dashboard">
+              <div class="project-card-header">
+                <span class="step-num">07</span>
+                <h3 class="project-title">MediCore</h3>
+                <p class="project-tagline">Healthcare Patient & Analytics Portal</p>
+              </div>
+              <div class="project-img-wrapper">
+                <img src="src/assets/projects/Medi_Core.jpg" alt="MediCore Project Screenshot" class="project-img"
+                  loading="lazy">
+                <div class="project-overlay">
+                  <a href="#contact" class="btn btn-sm btn-primary">Details <i
+                      class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+              </div>
+              <div class="project-meta">
+                <div class="tech-tags">
+                  <span class="tag">TypeScript</span>
+                  <span class="tag">Express</span>
+                  <span class="tag">Chart.js</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- No Projects Found Message -->
+        <div class="no-projects-found" id="no-projects-msg" style="display: none;">
+          <i class="fa-solid fa-folder-open"></i>
+          <h4>No matching projects found</h4>
+          <p>Try searching for a different tech keyword or select another category filter.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 3: SERVICES & ARCHITECTURE (Styled like "What we provide?") -->
+    <section class="section stack-section" id="stack">
+      <div class="container">
+
+        <div class="section-header text-center">
+          <div class="pill-tag">
+            <span class="pill-sparkle">✦</span>
+            <span>TECHNICAL ARCHITECTURE</span>
+          </div>
+          <h2 class="section-title">What I Provide</h2>
+          <p class="section-subtitle">
+            Comprehensive development expertise spanning client-side interactive UI, server-side APIs, and cloud
+            deployments.
+          </p>
+        </div>
+
+        <!-- Bento Grid Layout -->
+        <div class="bento-grid">
+
+          <div class="glass-card bento-card bento-main">
+            <div class="bento-badge"><i class="fa-solid fa-layer-group"></i> Core Architecture</div>
+            <h3 class="bento-title">Full Stack System Design</h3>
+            <p class="bento-desc">End-to-end web apps with clean separation of concerns, optimized databases, and
+              micro-frontends.</p>
+
+            <div class="bento-preview-box">
+              <div class="stack-list">
+                <div class="stack-pill"><i class="fa-brands fa-react"></i> React & Next.js</div>
+                <div class="stack-pill"><i class="fa-brands fa-node-js"></i> Express / Node.js</div>
+                <div class="stack-pill"><i class="fa-brands fa-python"></i> Python FastAPI</div>
+                <div class="stack-pill"><i class="fa-solid fa-database"></i> PostgreSQL / Mongo</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="glass-card bento-card bento-side">
+            <div class="bento-badge"><i class="fa-solid fa-bolt"></i> Speed & DX</div>
+            <h3 class="bento-title">Edge-Synced Performance</h3>
+            <p class="bento-desc">Blazing fast static asset deployment, client-side caching, and responsive cross-device
+              layouts.</p>
+            <div class="metric-display">
+              <div class="metric-val">100<span class="unit">%</span></div>
+              <div class="metric-label">Lighthouse Performance & Access</div>
+            </div>
+          </div>
+
+          <div class="glass-card bento-card bento-side-2">
+            <div class="bento-badge"><i class="fa-solid fa-code"></i> Tooling</div>
+            <h3 class="bento-title">Developer Tooling & Automation</h3>
+            <p class="bento-desc">Type safety with TypeScript, automated CI/CD workflows, and containerized Docker
+              environments.</p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 4: ABOUT ME & CONTACT (Footer Section) -->
+    <section class="section contact-section" id="contact">
+      <div class="container">
+
+        <div class="glass-card contact-wrapper">
+
+          <div class="contact-info">
+            <div class="profile-header">
+              <img src="src/assets/aboobacker_salah_img.jpg" alt="Aboobacker Salah" class="profile-img"
+                onerror="this.src='https://via.placeholder.com/120?text=Salah'">
+              <div class="profile-details">
+                <h3 class="profile-name">Aboobacker Salah</h3>
+                <p class="profile-role">Software Engineer & Full-Stack Developer</p>
+                <div class="status-indicator">
+                  <span class="status-dot"></span>
+                  <span class="status-text">Available for contracts & full-time roles</span>
+                </div>
+              </div>
+            </div>
+
+            <p class="contact-bio">
+              Passionate about building intuitive digital experiences, high-throughput backend services, and innovative
+              AI solutions. Let's create something extraordinary together.
+            </p>
+
+            <div class="contact-actions-row">
+              <a href="src/assets/Aboobacker_salah_c_Resume.pdf" target="_blank" class="btn btn-primary btn-glow">
+                <i class="fa-solid fa-file-pdf"></i> Download PDF Resume
+              </a>
+              <a href="mailto:salah.contact@example.com" class="btn btn-secondary">
+                <i class="fa-solid fa-envelope"></i> Send Email
+              </a>
+            </div>
+
+            <div class="social-links-row">
+              <a href="https://linkedin.com" target="_blank" class="social-btn" aria-label="LinkedIn"><i
+                  class="fa-brands fa-linkedin"></i></a>
+              <a href="https://twitter.com" target="_blank" class="social-btn" aria-label="Twitter"><i
+                  class="fa-brands fa-x-twitter"></i></a>
+            </div>
+          </div>
+
+          <!-- Contact Form -->
+          <div class="contact-form-box">
+            <h4 class="form-title">Send a Direct Message</h4>
+            <form id="contact-form"
+              onsubmit="event.preventDefault(); alert('Thank you for reaching out! Message received.');">
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" placeholder="Your Name" required>
+              </div>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="your.email@domain.com" required>
+              </div>
+              <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" rows="4" placeholder="Tell me about your project or inquiry..."
+                  required></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary btn-full">
+                <span>Send Message</span>
+                <i class="fa-solid fa-paper-plane"></i>
+              </button>
+            </form>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-container">
+      <p>© 2026 Aboobacker Salah. Designed & Engineered with Precision.</p>
+    </div>
+  </footer>
+
+  <!-- Floating Back to Top Button -->
+  <a href="#hero" class="back-to-top-btn" id="back-to-top" aria-label="Back to Top" title="Back to Top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </a>
+
+  <script src="main.js"></script>
+</body>
+
+</html>
